@@ -50,7 +50,10 @@ Phoenix-Web/
 │   │   ├── admin/             # Admin-Bereich
 │   │   │   ├── dashboard/     # Admin Dashboard
 │   │   │   ├── events/        # Event-Verwaltung
-│   │   │   └── reservations/  # Reservierungs-Verwaltung
+│   │   │   ├── reservations/  # Reservierungs-Verwaltung
+│   │   │   ├── gallery/       # Galerie-Verwaltung
+│   │   │   ├── users/         # Benutzerverwaltung
+│   │   │   └── settings/      # Einstellungen & Passwort
 │   │   ├── barkarte/          # Barkarten-Seite
 │   │   ├── events/            # Events-Seite
 │   │   ├── galerie/           # Galerie-Seite
@@ -63,7 +66,9 @@ Phoenix-Web/
 │   │   ├── Navbar.tsx         # Navigation
 │   │   └── Footer.tsx         # Footer
 │   ├── lib/                   # Utilities & Daten
-│   │   └── data.ts           # Datenstrukturen
+│   │   ├── data.ts           # Datenstrukturen
+│   │   ├── utils.ts          # Utility Functions
+│   │   └── userManagement.ts # User-Management Logik
 │   └── types/                 # TypeScript Typen
 │       └── index.ts          # Type Definitions
 ├── public/                    # Statische Dateien
@@ -93,6 +98,25 @@ Phoenix-Web/
    - Filtere nach Status (Ausstehend, Bestätigt, Abgesagt)
    - Bestätige oder sage Reservierungen ab
    - Kontaktiere Gäste direkt per Telefon oder E-Mail
+
+4. **Galerie verwalten**
+   - Lade Bilder hoch (einzeln oder mehrere gleichzeitig)
+   - Ordne Bilder Kategorien zu (Bar, Cocktails, Events, Team, Food)
+   - Lösche oder bearbeite Bilder
+   - Bilder erscheinen automatisch auf der Galerie-Seite
+   - Siehe **[BILDER_ANLEITUNG.md](./BILDER_ANLEITUNG.md)** für Details
+
+5. **Benutzerverwaltung** (Nur für Admins)
+   - Lege neue Benutzer an (Staff, Manager, Admin)
+   - Verwalte Rechte und Rollen
+   - Setze User in Urlaub (temporäre Deaktivierung)
+   - Tracking: Sieh wer Reservierungen bearbeitet hat
+   - Siehe **[USER_MANAGEMENT_ANLEITUNG.md](./USER_MANAGEMENT_ANLEITUNG.md)** für Details
+
+6. **Eigene Einstellungen**
+   - Ändere dein Passwort
+   - Aktualisiere dein Profil (Name, E-Mail, Kürzel)
+   - Passe deine persönlichen Daten an
 
 ### Für Besucher
 

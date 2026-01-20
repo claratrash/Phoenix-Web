@@ -12,6 +12,7 @@ import {
   FaChartLine,
   FaUsers,
   FaCocktail,
+  FaPalette,
 } from 'react-icons/fa'
 
 export default function AdminDashboard() {
@@ -67,14 +68,28 @@ export default function AdminDashboard() {
       description: 'Bilder hochladen und verwalten',
       icon: FaImages,
       href: '/admin/gallery',
+      color: 'primary',
+    },
+    {
+      title: 'Benutzerverwaltung',
+      description: 'Benutzer anlegen, bearbeiten und Rechte verwalten',
+      icon: FaUsers,
+      href: '/admin/users',
       color: 'gold',
     },
     {
+      title: 'Design & Bilder',
+      description: 'Logo und Hintergrundbilder anpassen',
+      icon: FaPalette,
+      href: '/admin/appearance',
+      color: 'primary',
+    },
+    {
       title: 'Einstellungen',
-      description: 'Öffnungszeiten, Kontaktdaten, etc.',
+      description: 'Passwort ändern, Profil bearbeiten',
       icon: FaCog,
       href: '/admin/settings',
-      color: 'primary',
+      color: 'gold',
     },
   ]
 

@@ -2,7 +2,8 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { FaBars, FaTimes, FaCocktail } from 'react-icons/fa'
+import { FaBars, FaTimes } from 'react-icons/fa'
+import Logo from './Logo'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -22,10 +23,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 group">
-            <FaCocktail className="text-3xl text-primary-500 group-hover:rotate-12 transition-transform" />
-            <span className="font-display text-2xl font-bold bg-gradient-to-r from-primary-500 to-gold-500 bg-clip-text text-transparent">
-              Phönix
-            </span>
+            <Logo />
           </Link>
 
           {/* Desktop Navigation */}

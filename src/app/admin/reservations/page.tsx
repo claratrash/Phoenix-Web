@@ -13,8 +13,11 @@ import {
   FaCheck,
   FaTimes,
   FaFilter,
+  FaUserTag,
+  FaStickyNote,
 } from 'react-icons/fa'
 import { Reservation } from '@/types'
+import { getCurrentUser } from '@/lib/userManagement'
 
 // Beispiel-Reservierungen
 const sampleReservations: Reservation[] = [
@@ -60,20 +63,41 @@ export default function AdminReservationsPage() {
   const [reservations, setReservations] = useState<Reservation[]>(sampleReservations)
   const [isLoading, setIsLoading] = useState(true)
   const [filter, setFilter] = useState<'all' | 'pending' | 'confirmed' | 'cancelled'>('all')
+  const [currentUser, setCurrentUser] = useState<any>(null)
 
   useEffect(() => {
     const isLoggedIn = localStorage.getItem('admin-logged-in')
     if (!isLoggedIn) {
       router.push('/admin')
     } else {
+      const user = getCurrentUser()
+      setCurrentUser(user)
       setIsLoading(false)
     }
   }, [router])
 
   const updateStatus = (id: string, status: Reservation['status']) => {
-    setReservations(reservations.map(res => 
-      res.id === id ? { ...res, status } : res
-    ))
+    const updatedReservation = reservations.find(res => res.id === id)
+    if (updatedReservation && currentUser) {
+      const updated = {
+        ...updatedReservation,
+        status,
+        processedBy: currentUser.shortCode,
+        processedAt: new Date().toISOString()
+      }
+      setReservations(reservations.map(res => 
+        res.id === id ? updated : res
+      ))
+    }
+  }
+
+  const addNote = (id: string) => {
+    const note = prompt('Interne Notiz hinzufügen:')
+    if (note) {
+      setReservations(reservations.map(res =>
+        res.id === id ? { ...res, notes: note } : res
+      ))
+    }
   }
 
   const deleteReservation = (id: string) => {
@@ -245,6 +269,34 @@ export default function AdminReservationsPage() {
                   </div>
                 )}
 
+                {reservation.notes && (
+                  <div className="bg-blue-900/20 border border-blue-500/30 rounded-lg p-3 mb-4">
+                    <div className="flex items-start space-x-2">
+                      <FaStickyNote className="text-blue-500 mt-0.5" />
+                      <div>
+                        <p className="text-xs text-blue-400 font-medium mb-1">Interne Notiz:</p>
+                        <p className="text-sm text-neutral-300">{reservation.notes}</p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {reservation.processedBy && (
+                  <div className="bg-neutral-800 rounded-lg p-3 mb-4">
+                    <div className="flex items-center space-x-2 text-sm text-neutral-300">
+                      <FaUserTag className="text-gold-500" />
+                      <span>
+                        Bearbeitet von: <span className="font-mono text-gold-500">{reservation.processedBy}</span>
+                        {reservation.processedAt && (
+                          <span className="text-neutral-400 ml-2">
+                            am {new Date(reservation.processedAt).toLocaleString('de-DE')}
+                          </span>
+                        )}
+                      </span>
+                    </div>
+                  </div>
+                )}
+
                 <div className="flex items-center space-x-2 pt-4 border-t border-neutral-800">
                   {reservation.status === 'pending' && (
                     <>
@@ -281,6 +333,13 @@ export default function AdminReservationsPage() {
                       <span>Auf ausstehend setzen</span>
                     </button>
                   )}
+                  <button
+                    onClick={() => addNote(reservation.id)}
+                    className="flex items-center space-x-2 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg text-sm font-semibold transition-colors"
+                  >
+                    <FaStickyNote />
+                    <span>Notiz</span>
+                  </button>
                   <button
                     onClick={() => deleteReservation(reservation.id)}
                     className="ml-auto px-4 py-2 bg-neutral-700 hover:bg-neutral-600 text-white rounded-lg text-sm font-semibold transition-colors"

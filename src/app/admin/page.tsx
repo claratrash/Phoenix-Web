@@ -1,22 +1,24 @@
 'use client'
 
 import { useState } from 'react'
-import { FaLock, FaSignInAlt } from 'react-icons/fa'
+import { FaLock, FaSignInAlt, FaUser } from 'react-icons/fa'
+import { loginUser } from '@/lib/userManagement'
 
 export default function AdminLoginPage() {
+  const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault()
     
-    // Einfache Demo-Authentifizierung
-    if (password === 'phoenix2026') {
-      // In Produktion: Sichere Authentifizierung mit JWT
+    const user = loginUser(username, password)
+    
+    if (user) {
       localStorage.setItem('admin-logged-in', 'true')
       window.location.href = '/admin/dashboard'
     } else {
-      setError('Falsches Passwort')
+      setError('Falscher Benutzername/Passwort oder Account inaktiv/im Urlaub')
     }
   }
 
@@ -37,6 +39,28 @@ export default function AdminLoginPage() {
 
         <div className="bg-neutral-900 rounded-lg p-8 border border-neutral-800">
           <form onSubmit={handleLogin} className="space-y-6">
+            <div>
+              <label className="block text-sm font-medium text-neutral-300 mb-2">
+                Benutzername
+              </label>
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <FaUser className="text-neutral-500" />
+                </div>
+                <input
+                  type="text"
+                  value={username}
+                  onChange={(e) => {
+                    setUsername(e.target.value)
+                    setError('')
+                  }}
+                  className="w-full pl-10 pr-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-white focus:border-primary-500 focus:outline-none"
+                  placeholder="Benutzername eingeben"
+                  required
+                />
+              </div>
+            </div>
+
             <div>
               <label className="block text-sm font-medium text-neutral-300 mb-2">
                 Passwort
@@ -68,7 +92,7 @@ export default function AdminLoginPage() {
 
           <div className="mt-6 pt-6 border-t border-neutral-800">
             <p className="text-sm text-neutral-400 text-center">
-              Demo-Passwort: <code className="text-primary-500">phoenix2026</code>
+              Demo-Login: <code className="text-primary-500">admin</code> / <code className="text-primary-500">phoenix2026</code>
             </p>
           </div>
         </div>

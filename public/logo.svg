@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Phönix Symbol - Vereinfachte Version -->
+  <defs>
+    <linearGradient id="phoenixGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#dc2626;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="flameGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#facc15;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ef4444;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Flammen-Basis -->
+  <path d="M 100 180 Q 80 160 80 140 Q 80 120 90 110 Q 85 125 85 135 Q 85 145 95 155 L 100 160 L 105 155 Q 115 145 115 135 Q 115 125 110 110 Q 120 120 120 140 Q 120 160 100 180 Z" fill="url(#flameGradient)"/>
+  
+  <!-- Phönix Körper -->
+  <ellipse cx="100" cy="100" rx="30" ry="40" fill="url(#phoenixGradient)"/>
+  
+  <!-- Flügel links -->
+  <path d="M 70 100 Q 40 90 30 70 Q 25 60 30 50 Q 35 45 45 50 Q 55 55 60 70 Q 65 85 70 100 Z" fill="url(#phoenixGradient)" opacity="0.9"/>
+  
+  <!-- Flügel rechts -->
+  <path d="M 130 100 Q 160 90 170 70 Q 175 60 170 50 Q 165 45 155 50 Q 145 55 140 70 Q 135 85 130 100 Z" fill="url(#phoenixGradient)" opacity="0.9"/>
+  
+  <!-- Kopf -->
+  <circle cx="100" cy="80" r="15" fill="url(#phoenixGradient)"/>
+  
+  <!-- Schnabel -->
+  <path d="M 100 80 L 110 85 L 100 87 Z" fill="#fbbf24"/>
+  
+  <!-- Auge -->
+  <circle cx="105" cy="78" r="2" fill="#1f2937"/>
+  
+  <!-- Schwanzfedern -->
+  <path d="M 100 140 Q 90 170 85 190" stroke="url(#flameGradient)" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M 100 140 Q 100 175 100 195" stroke="url(#flameGradient)" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M 100 140 Q 110 170 115 190" stroke="url(#flameGradient)" stroke-width="4" fill="none" stroke-linecap="round"/>
+  
+  <!-- Krone/Kamm -->
+  <path d="M 95 70 L 92 60 L 95 65 L 100 55 L 105 65 L 108 60 L 105 70" fill="#fbbf24"/>
+</svg>

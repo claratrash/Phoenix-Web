@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { FaCocktail, FaCalendarAlt, FaUsers, FaArrowRight, FaMapMarkerAlt } from 'react-icons/fa'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import FacebookFeed from '@/components/FacebookFeed'
 import { sampleEvents } from '@/lib/data'
 
 export default function Home() {
@@ -162,25 +163,66 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Location Section */}
+        {/* Facebook Feed & Location Section */}
         <section className="py-20 px-4 bg-neutral-900">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="font-display text-4xl md:text-5xl font-bold mb-4 text-white">
-                So findest du uns
-              </h2>
-              <div className="w-20 h-1 bg-gradient-to-r from-primary-500 to-gold-500 mx-auto mb-6"></div>
-              <div className="flex items-center justify-center space-x-2 text-neutral-300">
-                <FaMapMarkerAlt className="text-primary-500" />
-                <p className="text-lg">Breiter Weg 202, 39104 Magdeburg</p>
+            <div className="grid md:grid-cols-2 gap-8 mb-16">
+              {/* Facebook Feed */}
+              <div>
+                <h2 className="font-display text-3xl font-bold mb-4 text-white text-center">
+                  Neuigkeiten von uns
+                </h2>
+                <div className="w-20 h-1 bg-gradient-to-r from-primary-500 to-gold-500 mx-auto mb-6"></div>
+                <FacebookFeed pageUrl="https://www.facebook.com/phoenixbarmagdeburg" showRealFeed={false} />
               </div>
-              <p className="text-neutral-400 mt-2">Direkt gegenüber vom Hundertwasserhaus</p>
-            </div>
 
-            <div className="bg-neutral-800 rounded-lg overflow-hidden border border-neutral-700 h-96 flex items-center justify-center">
-              <p className="text-neutral-400">
-                [Hier kann eine Google Maps Integration eingefügt werden]
-              </p>
+              {/* Location */}
+              <div>
+                <h2 className="font-display text-3xl font-bold mb-4 text-white text-center">
+                  So findest du uns
+                </h2>
+                <div className="w-20 h-1 bg-gradient-to-r from-primary-500 to-gold-500 mx-auto mb-6"></div>
+                <div className="space-y-4">
+                  <div className="bg-neutral-800 rounded-lg p-6 border border-neutral-700">
+                    <div className="flex items-center space-x-3 mb-3">
+                      <FaMapMarkerAlt className="text-2xl text-primary-500" />
+                      <div>
+                        <p className="text-white font-semibold">Breiter Weg 202</p>
+                        <p className="text-neutral-300">39104 Magdeburg</p>
+                      </div>
+                    </div>
+                    <p className="text-sm text-neutral-400 mb-4">
+                      Direkt gegenüber vom Hundertwasserhaus
+                    </p>
+                    <a
+                      href="https://www.google.com/maps/search/?api=1&query=Breiter+Weg+202+39104+Magdeburg"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block text-center px-6 py-3 bg-primary-500 hover:bg-primary-600 text-white rounded-lg font-semibold transition-colors"
+                    >
+                      In Google Maps öffnen
+                    </a>
+                  </div>
+                  
+                  <div className="bg-neutral-800 rounded-lg p-6 border border-neutral-700">
+                    <h3 className="font-semibold text-white mb-3">Öffnungszeiten</h3>
+                    <div className="space-y-2 text-sm">
+                      <div className="flex justify-between">
+                        <span className="text-neutral-400">Mo - Do</span>
+                        <span className="text-neutral-300">18:00 - 00:00</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-neutral-400">Fr - Sa</span>
+                        <span className="text-neutral-300">18:00 - 01:00</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-neutral-400">Sonntag</span>
+                        <span className="text-red-500">Geschlossen</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>

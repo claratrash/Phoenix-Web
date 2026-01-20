@@ -10,7 +10,8 @@ Diese Anleitung erklärt Schritt-für-Schritt, wie du die Website verwalten kann
 1. [Erste Schritte](#erste-schritte)
 2. [Events verwalten](#events-verwalten)
 3. [Reservierungen verwalten](#reservierungen-verwalten)
-4. [Häufige Fragen](#häufige-fragen)
+4. [Galerie verwalten](#galerie-verwalten)
+5. [Häufige Fragen](#häufige-fragen)
 
 ---
 
@@ -179,6 +180,107 @@ Diese Anleitung erklärt Schritt-für-Schritt, wie du die Website verwalten kann
 3. **Bestätigen** mit "OK"
 
 ⚠️ **Achtung**: Die Reservierung ist dann unwiderruflich gelöscht!
+
+---
+
+## 📸 Galerie verwalten
+
+### Bilder hochladen
+
+1. **Im Dashboard** auf **"Galerie"** klicken
+
+2. **Auf "Bilder hochladen" klicken** (grüner Button oben rechts)
+
+3. **Bilder auswählen**:
+   - Du kannst **mehrere Bilder gleichzeitig** auswählen
+   - Halte Strg (Windows) oder Cmd (Mac) gedrückt
+   - Oder: Strg+A um alle Bilder zu wählen
+
+4. **Warten** bis alle Bilder hochgeladen sind
+   - Du siehst einen Ladebalken
+   - Die Bilder erscheinen dann in der Übersicht
+
+5. **Kategorie zuweisen**:
+   - Unter jedem Bild ist ein Dropdown-Menü
+   - Wähle eine passende Kategorie:
+     - **Bar & Location**: Innenraum, Terrasse, Gewölbe
+     - **Cocktails**: Einzelne Drinks
+     - **Events**: Konzerte, Partys, Specials
+     - **Team**: Mitarbeiter-Fotos
+     - **Essen & Snacks**: Baguettes, Pizzen, Snacks
+
+✅ **Fertig!** Die Bilder erscheinen sofort in der Galerie!
+
+---
+
+### Bilder kategorisieren
+
+**Warum Kategorien?**
+- Besucher können nach Kategorien filtern
+- Bessere Übersicht
+- Professioneller Eindruck
+
+**Kategorie ändern:**
+1. Im Admin-Bereich → Galerie
+2. Suche das Bild
+3. Unter dem Bild: Dropdown-Menü
+4. Neue Kategorie wählen
+5. ✅ Wird automatisch gespeichert
+
+---
+
+### Bilder löschen
+
+1. **In der Galerie-Übersicht** (Admin-Bereich)
+
+2. **Mit der Maus über das Bild fahren**
+   - Ein roter Button erscheint
+   - Papierkorb-Symbol
+
+3. **Auf Papierkorb klicken**
+
+4. **Bestätigen** mit "OK"
+
+⚠️ **Achtung**: Das Bild ist dann unwiderruflich gelöscht!
+
+---
+
+### Galerie-Filter
+
+**Als Besucher sichtbar:**
+- Gehe zu `/galerie` auf der Website
+- Besucher können nach Kategorien filtern
+- Klick auf ein Bild zeigt es groß an (Lightbox)
+
+**Praktisch für:**
+- Gäste die nur Cocktails sehen wollen
+- Event-Interessierte
+- Location-Besichtigung
+
+---
+
+### Bilder-Tipps
+
+**Gute Bildqualität:**
+✅ Mindestens 800x800 Pixel
+✅ Hell und scharf
+✅ Guter Ausschnitt
+✅ Hauptmotiv erkennbar
+
+**Vermeiden:**
+❌ Dunkle, unscharfe Bilder
+❌ Zu große Dateien (>5 MB)
+❌ Bilder von fremden Websites (Urheberrecht!)
+❌ Private Fotos von Gästen (ohne Erlaubnis)
+
+**Empfohlene Anzahl:**
+- Bar & Location: 5-8 Bilder
+- Cocktails: 10-15 Bilder
+- Events: 5-10 Bilder
+- Team: 2-3 Bilder
+- Essen: 3-5 Bilder
+
+📚 **Detaillierte Anleitung**: Siehe [BILDER_ANLEITUNG.md](./BILDER_ANLEITUNG.md)
 
 ---
 
