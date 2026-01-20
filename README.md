@@ -36,4 +36,3 @@ Dann öffne [http://localhost:3000](http://localhost:3000)
 ## 📞 Support
 
 Bei Fragen siehe [ADMIN_ANLEITUNG.md](./ADMIN_ANLEITUNG.md)
-Website für phoenix Cocktailbar

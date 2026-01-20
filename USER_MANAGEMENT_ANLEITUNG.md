@@ -1,6 +1,6 @@
 # Benutzerverwaltung - Anleitung
 
-## 👥 User-Management System
+##  User-Management System
 
 ### Übersicht
 
